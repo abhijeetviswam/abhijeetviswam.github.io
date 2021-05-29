@@ -45,8 +45,10 @@ algolia:
 
 # Build settings
 markdown: kramdown
+
+# Removing theme as regular theme applied
 # theme: jekyll-theme-basically-basic
-remote_theme: "mmistakes/jekyll-theme-basically-basic"
+# remote_theme: "mmistakes/jekyll-theme-basically-basic"
 plugins: # previsously gems
   - jekyll-feed
   - jekyll-seo-tag
