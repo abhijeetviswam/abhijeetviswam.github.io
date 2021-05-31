@@ -36,10 +36,29 @@ _"So I've installed tmux. But now what? All I see is this ugly green bar at the 
 Relax. Deep breaths. In... Out... In... Out...<br/>
 I promise you by the end of this article, you'll also be able to make your tmux session look similar to mine.
 
-So where were we? Aah yes, the ugly green bar.<br/>
-This bar at the bottom is the status bar. Right out of the box, tmux displays the information about the opened tab on the left and some system information like hostname, time and date.
+But first let's check out how to interact with tmux.
 
+All interactions with tmux involves pressing a prefix key, followed by a command key. Out of the box, the prefix key would be set to `C-b`, which is shorthand for pressing the `Ctrl` key and letter `b` together. After pressing the prefix key, the next key press would be registered by tmux and not your shell. For example for creating a new tab, the command is `C-b c`. So you hit the keys `Ctrl+b` first and then hit the `c` key.
+
+Here are the few important ones you need
+
+| Key Binding       | Action                                    |
+| ----------------- | ----------------------------------------- |
+| `C-b ?`           | Help - Lists all available key bindings   |
+| `C-b c`           | Creates a new tab                         |
+| `C-b n`           | Switches to the next tab                  |
+| `C-b p`           | Switches to the previous tab              |
+| `C-b %`           | Splits the current tab vertically         |
+| `C-b "`           | Splits the current tab horizontally       |
+| `C-b arrowkeys`   | Navigate between open panes               |
+
+![](/assets/images/blog/tmux-demo.gif)
+
+Coming back to the ugly green bar, this bar at the bottom is your status bar. Right out of the box, tmux displays the information about the opened tab on the left and some system information like hostname, time and date. This is just how the creators of tmux designed it to show by default. But the status bar can be configured to display pretty much any information you need it to display. Want to see your battery percentage? You can. Want to see which song is currently playing on Spotify? Done. What if you just want to see a tiny weather icon right in your command line because you are too lazy to turn your head and look out the window? Check.
+
+Customizing the status bar to suite your specific requirement is a whole another rabbit hole in itself into which I don't want to go down today. But if you want to try peeking into that hole, the github repo [awesome-tmux][awesome-tmux-gh] would be a great place to start.
 
 (_Work in Progress. Come back later for full article_ 😉... )
 
-[tmux-gh]:   https://github.com/tmux/tmux
+[tmux-gh]:          https://github.com/tmux/tmux
+[awesome-tmux-gh]:  https://github.com/rothgar/awesome-tmux

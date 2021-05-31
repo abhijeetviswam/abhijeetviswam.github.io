@@ -45,6 +45,8 @@ algolia:
 
 # Build settings
 markdown: kramdown
+kramdown:
+  input: GFM
 
 # Removing theme as regular theme applied
 # theme: jekyll-theme-basically-basic
