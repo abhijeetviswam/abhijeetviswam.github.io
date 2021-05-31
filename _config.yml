@@ -34,6 +34,9 @@ twitter_username: abhijeetviswam
 github_username:  abhijeetviswam
 linkedin_username: abhijeetviswam
 logo: # path of site logo, e.g. "/assets/images/logo.png"
+
+google_analytics: UA-198299966-1
+
 search: true # true, false (default)
 search_full_content: false # true, false (default)
 search_provider: # lunr (default), algolia
