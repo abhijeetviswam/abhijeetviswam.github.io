@@ -1,4 +1,6 @@
 <ul class="contact-list">
+  {% comment %}
+  Commenting out email from contact list. Re-add after creating domain.
   {% if site.email %}
     <li>
       <a href="mailto:{{ site.email }}">
@@ -7,6 +9,7 @@
       </a>
     </li>
   {% endif %}
+  {% endcomment %}
 
   {% if site.linkedin_username %}
     <li>{% include icon-linkedin.html username=site.linkedin_username label='LinkedIn' %}</li>
