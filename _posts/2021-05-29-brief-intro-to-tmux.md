@@ -7,9 +7,9 @@ permalink: /tmux
 <!-- categories: tech linux tmux -->
 ---
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Tmux_logo.svg" alt="tmux_logo" width="400"/>
-
 [Tmux][tmux-gh], like the Vim editor, is one of those tools in a developer's arsenal which can be intimidating at the beginning but becomes indispensable once you start using it. 
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Tmux_logo.svg" alt="tmux_logo" width="400"/>
 
 Tmux is an acronym for Terminal Multiplexer. It “multiplexes” your terminal and allow you to create multiple sessions, windows and panes within the same terminal. Tmux can elevate your terminal from feeling like an archaic artefact from the ’60s to a modern browser like application with the fancy tabs and panes. It even has support for mouse interactions when you forget the keyboard shortcut for resizing a pane.
 
