@@ -2,7 +2,6 @@
 layout: post
 title:  "Learning Kotlin for Android Development"
 excerpt: 
-date:   2021-06-13 08:36:09 +0530
 permalink: /starting-kotlin
 <!-- categories: tech linux tmux -->
 ---
