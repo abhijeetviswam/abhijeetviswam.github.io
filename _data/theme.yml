@@ -1,5 +1,6 @@
 # Theme Skin
-skin: soft # default, night, plum, sea, soft, steel
+# default, night, plum, sea, soft, steel
+skin: night
 
 # Theme Text
 t:
@@ -12,7 +13,7 @@ t:
   site_search: "Site Search"
   results_found: "Result(s) found"
   search_placeholder_text: "Enter your search term..."
-  home: "Home"
+  home: "home"
   newer: "Newer"
   older: "Older"
   email: "Email"
@@ -26,7 +27,7 @@ t:
 
 # Google Fonts
 google_fonts:
-  - name: "Fira Sans"
+  - name: "Inter"
     weights: "400,400i,600,600i"
 
 # Link to specific internal pages in the navigation.
@@ -36,3 +37,4 @@ google_fonts:
 navigation_pages:
   - about.md
   - cv.md
+  - gallery.md

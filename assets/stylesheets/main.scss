@@ -8,3 +8,30 @@
 @import "basically-basic/themes/{{ site.data.theme.skin | default: 'default' }}";
 
 @import "basically-basic";
+
+/* css for photo gallery */
+.image-gallery {
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(auto-fill,minmax(400px, 1fr));
+	justify-content: center;
+	padding: 4px;
+}
+.image-box {
+	flex-basis: 25%;
+	width: 100%;
+	padding: 10px;
+	margin: 2px;
+}
+.img-gallery {
+    border-radius: 10px;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+	transform: scale(1);
+	transition: all 0.3s ease-in-out;
+}
+.img-gallery:hover {
+   transform: scale(1.08);
+}
+

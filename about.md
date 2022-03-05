@@ -1,8 +1,12 @@
 ---
 layout: about
-title: About Me
+title: about me
 permalink: /about/
 ---
-I'm a Software Developer from India, currently working for [Comcast][comcast].
 
-[comcast]: https://corporate.comcast.com/company
+# Hi, I am Abhijeet.
+
+I am software developer. I am a photographer. I am a digital artist.
+
+And I am still figuring out how to juggle all of this while still staying
+relatively sane.

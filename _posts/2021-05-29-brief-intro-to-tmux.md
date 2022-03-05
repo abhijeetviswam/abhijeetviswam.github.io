@@ -3,7 +3,7 @@ layout: post
 title:  "A Brief Introduction to tmux"
 excerpt: Tmux, like the Vim editor, is one of those tools in a developer's arsenal which can be intimidating at the beginning but becomes indispensable once you start using it. 
 date:   2021-05-29 00:52:33 +0530
-permalink: /tmux
+permalink: /blog/tmux
 <!-- categories: tech linux tmux -->
 ---
 
