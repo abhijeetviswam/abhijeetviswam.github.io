@@ -39,11 +39,13 @@ main {
     @include breakpoint($large) {
       padding-right: 3rem;
       padding-left: 3rem;
+      margin:auto;
     }
 
     @include breakpoint($xlarge) {
       padding-right: 4rem;
       padding-left: 4rem;
+      margin: auto;
     }
   }
 }
@@ -107,6 +109,7 @@ main {
       margin: 0 0 2rem;
       border-radius: 2 * $border-radius;
       width: 250px;
+      box-shadow: 0px 5px 15px 5px rgba(0, 0, 0, 0.5);
 
       @include breakpoint($medium) {
         margin: 0 0 0 2rem;

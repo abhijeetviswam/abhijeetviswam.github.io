@@ -8,5 +8,5 @@ permalink: /about/
 
 I am software developer. I am a photographer. I am a digital artist.
 
-And I am still figuring out how to juggle all of this while still staying
+And I am still figuring out how to juggle all of these while staying
 relatively sane.
