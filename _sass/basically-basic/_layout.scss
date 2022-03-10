@@ -79,6 +79,7 @@ main {
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+    justify-content: center;
 
     @include breakpoint($medium) {
       -ms-flex-wrap: nowrap;
@@ -105,6 +106,7 @@ main {
     .author-picture {
       margin: 0 0 2rem;
       border-radius: 2 * $border-radius;
+      width: 250px;
 
       @include breakpoint($medium) {
         margin: 0 0 0 2rem;
