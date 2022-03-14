@@ -25,3 +25,9 @@ permalink: /gallery/
       </div>
     {% endfor %}
 </div>
+
+<!-- TODO : rework gallery similar to this - -->
+<!-- https://github.com/mmistakes/made-mistakes-jekyll/blob/master/src/_work/procreate-paintings.md?plain=1 -->
+<!-- Last commit when I referred is 9ca2e52. Create 2 categories for artworks, -->
+<!-- photographs. Each photo/drawing will have it's own page. Pull in the thumbnail -->
+<!-- from the page like { for post in site.categories.photographs } -->

@@ -12,30 +12,52 @@
 // TODO move custom CSS into proper files
 // css for photo gallery
 .image-gallery {
-	width: 100%;
-	display: grid;
-	grid-template-columns: repeat(auto-fill,minmax(300px, 1fr));
-	justify-content: center;
-	padding: 4px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    column-count:2;
+    column-gap: 0px;
+    justify-content: center;
+    padding: 4px;
+
+    @include breakpoint($medium) {
+        width:95%;
+        column-count:3
+    }
+    @include breakpoint($large) {
+        column-count:4
+    }
+    @include breakpoint($xlarge) {
+        width:90%;
+    }
 }
 .image-box {
 	flex-basis: 25%;
 	width: 100%;
-	padding: 10px;
+	padding: 4px;
 	margin: 2px;
+    @include breakpoint($medium) {
+        padding: 6px;
+    }
+    @include breakpoint($large) {
+        padding: 8px;
+    }
+    @include breakpoint($xlarge) {
+        padding: 10px;
+    }
 }
 .img-gallery {
     border-radius: 10px;
     width: 100%;
-    height: 320px;
     object-fit: cover;
     z-index: 1;
 	transition: all 0.3s ease-in-out;
 }
 .img-gallery:hover {
-   transform: scale(1.1);
+   transform: scale(1.05);
    z-index:2;
    box-shadow: 0px 0px 10px 5px rgba(8, 133, 145, 0.67);
+   transition: all 0.1s ease-in-out;
 }
 
 // For images in the git blog
