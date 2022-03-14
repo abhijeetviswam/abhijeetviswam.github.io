@@ -10,3 +10,7 @@ $background-color: #252a34 !default;
 $code-background-color: #fff !default;
 $border-color: rgba($text-color, 0.5) !default;
 $overlay-color: #fff !default;
+
+// Added custom color since comments were not
+// distinguishable from commands in code blocks
+$base04: #6f7479 !default;

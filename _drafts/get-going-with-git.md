@@ -138,24 +138,28 @@ When you commit, git creates a snapshot of all the changes you made since your
 previous commit. In this case there is no previous commit so it's all changes
 since the beginning.
 
-<img class="git-blog-img-1" src="{{ page.imagepath }}/1_initial_commit.png" alt="Initial Commit"/>
-
-<img class="git-blog-img-1" src="{{ page.imagepath }}/2_main_branch.png" alt="Initial Commit"/>
-
-<div class="blog-git-scroll">
-<img class="git-blog-img-2" src="{{ page.imagepath }}/3_feauture_branch.png" alt="Initial Commit"/>
+<div class="blog-git-img">
+<img class="blog-git-1" src="{{ page.imagepath }}/1_initial_commit.png" alt="Initial Commit"/>
 </div>
 
-<div class="blog-git-scroll">
-<img class="git-blog-img-2" src="{{ page.imagepath }}/4_main_grows.png" alt="Initial Commit"/>
+<div class="blog-git-img">
+<img class="blog-git-1" src="{{ page.imagepath }}/2_main_branch.png" alt="Main Branch"/>
 </div>
 
-<div class="blog-git-scroll">
-<img class="git-blog-img-2" src="{{ page.imagepath }}/5_git_revert.png" alt="Initial Commit"/>
+<div class="blog-git-img">
+<img class="blog-git-2" src="{{ page.imagepath }}/3_feauture_branch.png" alt="Feature Branch"/>
 </div>
 
-<div class="blog-git-scroll">
-    <img class="git-blog-img-2" src="{{ page.imagepath }}/6_git_merge.png" alt="Initial Commit"/>
+<div class="blog-git-img">
+<img class="blog-git-2" src="{{ page.imagepath }}/4_main_grows.png" alt="Growing main branch"/>
+</div>
+
+<div class="blog-git-img">
+<img class="blog-git-2" src="{{ page.imagepath }}/5_git_revert.png" alt="Git revert"/>
+</div>
+
+<div class="blog-git-img">
+<img class="blog-git-2" src="{{ page.imagepath }}/6_git_merge.png" alt="Git Merge"/>
 </div>
 
 ### <a name="the_advanced_section">The Advanced Section</a> 

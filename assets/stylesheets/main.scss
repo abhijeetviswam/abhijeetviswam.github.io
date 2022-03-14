@@ -9,7 +9,8 @@
 
 @import "basically-basic";
 
-/* css for photo gallery */
+// TODO move custom CSS into proper files
+// css for photo gallery
 .image-gallery {
 	width: 100%;
 	display: grid;
@@ -37,3 +38,35 @@
    box-shadow: 0px 0px 10px 5px rgba(8, 133, 145, 0.67);
 }
 
+// For images in the git blog
+img.blog-git-1 {
+    max-width: 1000px;
+    max-height: 120px;
+    @include breakpoint($small) {
+        max-height: 140px;
+    }
+    @include breakpoint($medium) {
+        max-height: 210px;
+    }
+    @include breakpoint($large) {
+        max-height: 200px;
+    }
+}
+img.blog-git-2 {
+    max-width: 1000px;
+    max-height: 200px;
+    @include breakpoint($small) {
+        max-height: 240px;
+    }
+    @include breakpoint($medium) {
+        max-height: 320px;
+    }
+    @include breakpoint($large) {
+        max-width: 100%;
+    }
+}
+div.blog-git-img {
+    margin: 0 auto;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
