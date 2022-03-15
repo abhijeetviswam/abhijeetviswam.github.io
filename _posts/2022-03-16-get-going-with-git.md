@@ -1,10 +1,11 @@
 ---
 layout: post
 title: "Get Going with GIT"
-excerpt: 
+<!-- excerpt:  -->
 imagepath: /assets/images/blog/git
-permalink: /blog/git
-<!-- categories: tech linux tmux -->
+date:   2022-03-16 09:00:00 +0530
+permalink: /blog/get-going-with-git
+
 ---
 
 One would think that after gifting the world arguably the most important 
@@ -56,7 +57,7 @@ While this approach does work to get the changes you made into the common
 codebase that everyone is working off of, it barely scratches the surface of
 all the potential benefits that git has to offer.
 
-### <a name="the_concepts">The Concepts</a> 
+### <a name="storytime">It's Story Time</a> 
 
 > Just going over the basic concepts of git in this section. If you think you
 > already know git well enough, that you have risen above all the peasants who
@@ -81,7 +82,7 @@ away.
 You're sitting and admiring all the wonderful code you wrote, and thats you get
 a call from Elon. Looks like the crew to Mars includes some Japanese astronauts.
 The app needs to have a Japanese transation unit, and so you need to work with
-the Japanese developer Satoshi Nakamoto and incorporate it in the app.
+the Japanese developer [ Satoshi Nakamoto ][2] and incorporate it in the app.
 
 Alright, no big deal. You just need to send all your code to Satoshi, so that he
 can add the Japanese transation module and once he's done he can send everything
@@ -142,13 +143,89 @@ since the beginning.
 <img class="blog-git-1" src="{{ page.imagepath }}/1_initial_commit.png" alt="Initial Commit"/>
 </div>
 
+As you go further with the development, you keep creating more commits. How
+often you create a commit is a personal decision. One can keep adding commits
+for every single line change, you can commit after implementing one or two
+functions or you can commit after you develop a feature completely. The best
+practice would be to stay somewhere in the middle. Keep adding commits too
+frequently and it would get overwhelming and it'll be harder to narrow down to a
+specific commit in case you want to refer it in the future. On the contrary if
+you go too long without commiting, an accidental file delete is all it takes to
+lose days of effort - don't ask me how I know (In case you want the entire
+feature as one single commit, it can be done at end using a git squash, check
+out the [advanced section][adv_section])
+
+For now let's say you are commiting one module as a single commit. So you
+already commited the voice recog module, you create two more commits - a
+translator module and an audio playback module.
+
 <div class="blog-git-img">
 <img class="blog-git-1" src="{{ page.imagepath }}/2_main_branch.png" alt="Main Branch"/>
 </div>
 
+GIT saves each of your commits as a chain, with each commit linked to it's
+parent. Here commit 1 is the parent of commit 2, which in turn is the parent of
+commit 3.
+
+Now that you've had done some code commits, you got the requirement to share the
+code with another developer. Now would be a good time to introduce you to two
+core concepts used in git - branching and remote repositories.
+
+The chain of commits you created till this point were all created on the default
+branch in git, usually 'master' or 'main' branch. When you (or a coworker)
+starts to work on a new feature, but you want to make sure that the existing
+code stays unchanged and would not be potentially be broken due to some issues
+in the new feature, this is a great oppurtunity to split your default branch.
+
+You can create a new branch, let's call it 'feature-japanese'
+
+```bash
+# Create a new branch
+git branch feature-japanese
+
+# Switch to the newly created branch
+git checkout feature-japanese
+```
+
+Now you or your collegue can start working on the new branch. Whatever new
+commits you make on the new branch would not affect the code already commited to
+main branch. You can easily switch back and forth between the branches using the
+git  checkout command - `git checkout <branch-name>`
+
 <div class="blog-git-img">
 <img class="blog-git-2" src="{{ page.imagepath }}/3_feauture_branch.png" alt="Feature Branch"/>
 </div>
+
+"_But wait, all the code is still on my laptop. So do I just mail all the code
+over to my collegue?_"
+
+Nope. Mailing code changes back and forth are practices from the dark ages. This
+is where remote repositories comes into picture. 
+
+The remote repository is just a server which holds an exact replica of
+your local repository. All the code from your machine is uploaded to this
+remote server. The most popular repository hosting service available is
+[Github](https://github.com). Other popular options include [GitLab](https://gitlab.com/),
+[Bitbucket](https://bitbucket.org/) etc. You can even host your own remote repo
+on your server if you choose to.
+
+Let's say you chose Github to host your remote repo. Just create an account in
+Github and create a new empty repository. Github would provide the URL of the
+repo you created - https://github.com/yourUsername/yourRepoName
+
+We need to push all the changes in our local repo to the remote repo. For this
+first we need to add the remote repo details to our local git instance.
+
+```bash
+# Configure the remote repository URL
+git add remote origin git@github.com:yourUsername/yourRepoName.git
+```
+
+Once you configure your remote. You can push the changes in your branch in the 
+local repo to the remote repo using the git push command
+```bash
+git push -u origin <branch-name>
+```
 
 <div class="blog-git-img">
 <img class="blog-git-2" src="{{ page.imagepath }}/4_main_grows.png" alt="Growing main branch"/>
@@ -162,18 +239,9 @@ since the beginning.
 <img class="blog-git-2" src="{{ page.imagepath }}/6_git_merge.png" alt="Git Merge"/>
 </div>
 
-### <a name="the_advanced_section">The Advanced Section</a> 
-
-Draft expand all of these
-Better to move Advanced section to a new post - Getting Good at GIT
-
-- git revert
-- git bisect 
-- git log --graph --oneline
-- git config file alias
-- git rebase
-- 
 
 [1]: https://insights.stackoverflow.com/survey/2021#section-most-popular-technologies-other-tools
-[concepts]: #the_concepts
-[adv_section]: #the_advanced_section
+[2]: https://en.wikipedia.org/wiki/Satoshi_Nakamoto
+[storytime]: #the_concepts
+<!-- TODO: Give proper relative URL here -->
+[adv_section]: {{ site.url }}/blog/git-advanced
