@@ -3,7 +3,7 @@ layout: post
 title: "Get Going with GIT"
 <!-- excerpt:  -->
 imagepath: /assets/images/blog/git
-date:   2022-03-16 09:00:00 +0530
+date:   2022-03-15 09:00:00 +0530
 permalink: /blog/get-going-with-git
 
 ---
