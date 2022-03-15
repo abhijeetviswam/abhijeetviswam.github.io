@@ -75,7 +75,7 @@ away.
 
 1. First, you write code for voice recognition to hear what the martians are
    saying.
-2. Then you code the translator which converts martian language to English.
+2. Then you integrate the martian language to English translator library.
 3. Finally, you write the audio playback code for playing back the translated
    English out loud.
 
@@ -89,18 +89,19 @@ can add the Japanese transation module and once he's done he can send everything
 back.
 
 Few weeks pass and you get another call from Elon, Apparently newest data from
-Mars suggests that martians use light to speak instead of sound ( I know,
-martians are weird ), so you need to update your code.
+Mars suggests that martians use sign language and not speech, so you need to update
+your code.
 
-Not the news you expected to hear from Elon. But whatever, you go back to your
+Not the news you expected to hear. But whatever, you get back to your
 laptop, chuck all the voice recognition code, replace all that with image
-recognition to decipher all the lights and colors martians use to communicate.
+recognition to decode the martian sign language.
+
 But now your version of the code has stuff Satoshi doesn't have and Satoshi's
 version has stuff you don't have.
 
-The phone rings again. We got more data from Mars. Looks like martians use both
-light and sound to talk. So looks like you need both voice recog and image recog
-to talk to them.
+The phone rings again. We got more data from Mars. Looks like martians uses a
+combination of sign language and voice to talk. So looks like you need both voice
+recog and image recog to talk to them.
 
 "_But... But... But... I just deleted all that cause you said we don't need it
 anymore_ 🥺. _And how do I add Satoshi's code into the app? His files would have
@@ -156,8 +157,8 @@ feature as one single commit, it can be done at end using a git squash, check
 out the [advanced section][adv_section])
 
 For now let's say you are commiting one module as a single commit. So you
-already commited the voice recog module, you create two more commits - a
-translator module and an audio playback module.
+already commited the voice recog module, you create two more commits - integrating
+the translator module and adding an audio playback module.
 
 <div class="blog-git-img">
 <img class="blog-git-1" src="{{ page.imagepath }}/2_main_branch.png" alt="Main Branch"/>
