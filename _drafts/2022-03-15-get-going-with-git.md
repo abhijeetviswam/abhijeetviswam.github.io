@@ -245,4 +245,5 @@ git push -u origin <branch-name>
 [2]: https://en.wikipedia.org/wiki/Satoshi_Nakamoto
 [storytime]: #the_concepts
 <!-- TODO: Give proper relative URL here -->
-[adv_section]: {{ site.url }}/blog/git-advanced
+<!-- [adv_section]: {{ site.url }}/blog/git-advanced -->
+[adv_section]: {% link _drafts/2022-03-31-getting-good-at-git.md %}
