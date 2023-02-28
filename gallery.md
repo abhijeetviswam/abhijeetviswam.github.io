@@ -1,30 +1,32 @@
 ---
 layout: default
 title: gallery
-imagepath: /assets/images/photos/
-imagethumbpath: /assets/images/photos/thumbs/
-imagelist:
-  - image_file: photo1.jpg
-  - image_file: photo2.jpg
-  - image_file: photo3.jpg
-  - image_file: photo4.jpg
-  - image_file: photo5.jpg
-  - image_file: photo6.jpg
-  - image_file: photo7.jpg
-  - image_file: photo8.jpg
-  - image_file: photo9.jpg
+imgagedir: photos/fullres/
+thumbsdir: photos/thumbs/
 permalink: /gallery/
 ---
 
-<div class="image-gallery">
-    {% for image in page.imagelist %}
-      <div class="image-box">
-        <a href="{{ page.imagepath }}{{ image.image_file }}">
-        <img src="{{ page.imagethumbpath }}{{ image.image_file | replace: ".jpg", ".gif"}}" class="img-gallery"/>
-        </a>
-      </div>
-    {% endfor %}
-</div>
+
+<div class ="image-gallery">
+  {% capture imagepath %}{{ site.imagesurl }}{{ page.imgagedir }}{% endcapture %} 
+  {% capture thumbpath %}{{ site.imagesurl }}{{ page.thumbsdir }}{% endcapture %} 
+  {% assign sorted = site.static_files | sort: 'date' | reverse %}
+  {% for file in sorted %}
+    {% if file.path contains imagepath %}
+      {% if file.extname == '.jpg' %}
+        {% assign filenameparts = file.path | split: "/" %}
+        {% assign filename = filenameparts | last | replace: file.extname,"" %}
+        <div class="image-box">
+          <a href="{{ file.path | relative_url }}" title="{{ filename }}" class="img-gallery">
+          <img src="{{ thumbpath }}{{ file.name }} " alt="{{ filename }}" /></a>
+          <div class="card-info">
+            <h3>{{ filename }}</h3>
+          </div>
+        </div>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+ </div>
 
 <!-- TODO : rework gallery similar to this - -->
 <!-- https://github.com/mmistakes/made-mistakes-jekyll/blob/master/src/_work/procreate-paintings.md?plain=1 -->
