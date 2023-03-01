@@ -35,6 +35,7 @@ github_username:  abhijeetviswam
 linkedin_username: abhijeetviswam
 logo: "/assets/images/logo.png"
 imagesurl: "/assets/images/"
+permalink: /:categories/:title/
 
 google_analytics: UA-198299966-1
 

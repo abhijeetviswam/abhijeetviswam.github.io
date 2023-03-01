@@ -14,11 +14,24 @@ permalink: /gallery/
     {% assign file = site.static_files | where: "path", imagepathfull | first %}
     {% if file %}
       <div class="image-box">
-        <a href="{{ imagepathfull | relative_url }}" title="{{ imagefile.title }}" class="img-gallery">
+        {% for post in site.posts %}
+          {% assign posttitle = post.url | split: "/" | last %}
+          {% assign postexcerpt = "" %}
+          {% assign imagesurl = imagepathfull | relative_url %}
+          {% if imagefile.post == posttitle %}
+            {% if post.excerpt %}
+              {% assign postexcerpt = post.excerpt | strip_html | truncatewords %}
+            {% endif %}
+            {% assign imagesurl = post.url %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+        <a href="{{ imagesurl }}" title="{{ imagefile.title }}" class="img-gallery">
           <img src="{{ thumbpath }}{{ imagefile.filename }} " alt="{{ imagefile.title }}" />
         </a>
         <div class="card-info">
           <h3>{{ imagefile.title }}</h3>
+          {{ postexcerpt }}
         </div>
       </div>
     {% endif %}

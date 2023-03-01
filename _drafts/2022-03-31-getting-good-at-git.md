@@ -2,9 +2,8 @@
 layout: post
 title: "Getting Good at GIT"
 <!-- excerpt:  -->
+categories: [articles]
 date:   2022-03-31 09:00:00 +0530
-permalink: /blog/git-advanced
-
 ---
 
 Draft expand all of these

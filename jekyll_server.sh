@@ -27,13 +27,13 @@ case $1 in
         docker run \
             --volume="$PWD:/srv/jekyll:Z" \
             -p 127.0.0.1:4000:4000 \
-            -it jekyll serve
+            -it jekyll serve --livereload
     ;;
     'serve-drafts')
         docker run \
             --rm --name jekyll-container \
             --volume="$PWD:/srv/jekyll:Z" \
             -p 127.0.0.1:4000:4000 \
-            -it jekyll serve --drafts
+            -it jekyll serve --drafts --livereload
     ;;
 esac

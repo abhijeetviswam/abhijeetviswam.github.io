@@ -3,9 +3,8 @@ layout: post
 title: "Get Going with GIT"
 <!-- excerpt:  -->
 imagepath: /assets/images/blog/git
+categories: [articles]
 date:   2022-03-15 09:00:00 +0530
-permalink: /blog/get-going-with-git
-
 ---
 
 One would think that after gifting the world arguably the most important 

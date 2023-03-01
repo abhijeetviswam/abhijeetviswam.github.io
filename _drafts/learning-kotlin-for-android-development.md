@@ -2,7 +2,7 @@
 layout: post
 title:  "Learning Kotlin for Android Development"
 excerpt: 
-permalink: /starting-kotlin
+categories: [articles]
 <!-- categories: tech linux tmux -->
 ---
 
