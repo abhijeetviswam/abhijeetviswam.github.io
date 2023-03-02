@@ -37,7 +37,8 @@ logo: "/assets/images/logo.png"
 imagesurl: "/assets/images/"
 permalink: /:categories/:title/
 
-google_analytics: UA-198299966-1
+# google_analytics: UA-198299966-1
+google_analytics: G-P6XNMETEEP
 
 search: false # true, false (default)
 search_full_content: false # true, false (default)
