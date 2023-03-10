@@ -20,7 +20,7 @@ from the ’60s to a modern browser like application with the fancy tabs and
 panes. It even has support for mouse interactions when you forget the keyboard
 shortcut for resizing a pane.
 
-![](/assets/images/blog/tmux-sample-screenshot.png)
+![]({{ site.imagesurl }}blog/tmux-sample-screenshot.png)
 
 While all these fancy panes and windows within a terminal are neat, the
 greatest attraction for tmux is that all terminal sessions are persistent. This
@@ -46,7 +46,7 @@ To fire up a new tmux session, just use
 tmux
 {% endhighlight %}
 
-![](/assets/images/blog/tmux-initial.png)
+![]({{ site.imagesurl }}/blog/tmux-initial.png)
 
 The bar at the bottom of your terminal is the status bar. Out of the box, tmux
 displays the information about the opened window on the left and some system
@@ -76,7 +76,7 @@ Here are the few important ones you need
 | `C-b :`           | Open tmux command-line                    |
 | `C-b d`           | Detach from active tmux session           |
 
-![](/assets/images/blog/tmux-demo.gif)
+![]({{ site.imagesurl }}/blog/tmux-demo.gif)
 
 ## Session management
 

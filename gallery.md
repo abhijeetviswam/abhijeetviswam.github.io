@@ -20,14 +20,14 @@ permalink: /gallery/
           {% assign imagesurl = imagepathfull | relative_url %}
           {% if imagefile.post == posttitle %}
             {% if post.excerpt %}
-              {% assign postexcerpt = post.excerpt | strip_html | truncatewords %}
+              {% assign postexcerpt = post.excerpt | strip_html | truncatewords:12 , "... Read more" %}
             {% endif %}
             {% assign imagesurl = post.url %}
             {% break %}
           {% endif %}
         {% endfor %}
         <a href="{{ imagesurl }}" title="{{ imagefile.title }}" class="img-gallery">
-          <img src="{{ thumbpath }}{{ imagefile.filename }} " alt="{{ imagefile.title }}" />
+          <img src="{{ thumbpath }}{{ file.basename }}.avif" alt="{{ imagefile.title }}" />
         </a>
         <div class="card-info">
           <h3>{{ imagefile.title }}</h3>
