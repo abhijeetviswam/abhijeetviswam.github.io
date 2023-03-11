@@ -11,7 +11,7 @@ tags: tech linux tmux
 arsenal which can be intimidating at the beginning but becomes indispensable
 once you start using it.
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Tmux_logo.svg" alt="tmux_logo" width="400"/>
+<img class="lazyload" src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Tmux_logo.svg" alt="tmux_logo" width="400"/>
 
 Tmux is an acronym for Terminal Multiplexer. It “multiplexes” your terminal and
 allow you to create multiple sessions, windows and panes within the same
@@ -20,7 +20,7 @@ from the ’60s to a modern browser like application with the fancy tabs and
 panes. It even has support for mouse interactions when you forget the keyboard
 shortcut for resizing a pane.
 
-![]({{ site.imagesurl }}blog/tmux-sample-screenshot.png)
+<img class="lazyload" src="{{ site.imagepath.posts }}tmux-sample-screenshot.png" />
 
 While all these fancy panes and windows within a terminal are neat, the
 greatest attraction for tmux is that all terminal sessions are persistent. This
@@ -46,7 +46,7 @@ To fire up a new tmux session, just use
 tmux
 {% endhighlight %}
 
-![]({{ site.imagesurl }}/blog/tmux-initial.png)
+<img class="lazyload" src="{{ site.imagepath.posts }}tmux-initial.png" />
 
 The bar at the bottom of your terminal is the status bar. Out of the box, tmux
 displays the information about the opened window on the left and some system
@@ -76,7 +76,7 @@ Here are the few important ones you need
 | `C-b :`           | Open tmux command-line                    |
 | `C-b d`           | Detach from active tmux session           |
 
-![]({{ site.imagesurl }}/blog/tmux-demo.gif)
+<img class="lazyload" src="{{ site.imagepath.posts }}tmux-demo.gif" />
 
 ## Session management
 

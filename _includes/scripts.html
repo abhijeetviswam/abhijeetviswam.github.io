@@ -3,6 +3,7 @@
 {% endif %}
 
 <script async src="{{ '/assets/javascripts/main.js' | relative_url }}"></script>
+<script src="/assets/javascripts/lazysizes.min.js" async=""></script>
 
 {% if site.search %}
   {%- assign search_provider = site.search_provider | default: "lunr" -%}

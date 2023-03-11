@@ -38,4 +38,4 @@ if [ ! `ls ${SRC_DIR}/*.jpg 2>/dev/null| wc -l` -gt 0 ]; then
     exit
 fi
 
-mogrify -format avif -path ${DEST_DIR} -thumbnail 800 ${SRC_DIR}/*.jpg
+mogrify -format avif -path ${DEST_DIR} -thumbnail 50 ${SRC_DIR}/*.jpg

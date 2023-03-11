@@ -24,12 +24,14 @@ case $1 in
             -t jekyll
     ;;
     'serve')
+        echo "Starting Jekyll server"
         docker run \
             --volume="$PWD:/srv/jekyll:Z" \
             -p 127.0.0.1:4000:4000 \
             -it jekyll serve --livereload
     ;;
     'serve-drafts')
+        echo "Starting Jekyll server with drafts"
         docker run \
             --rm --name jekyll-container \
             --volume="$PWD:/srv/jekyll:Z" \

@@ -1,23 +1,19 @@
 ---
 layout: default
 title: gallery
-imagedir: photos/fullres/
-thumbsdir: photos/thumbs/
 permalink: /gallery/
 ---
 
 <div class ="image-gallery">
-  {% capture imagepath %}{{ site.imagesurl }}{{ page.imagedir }}{% endcapture %}
-  {% capture thumbpath %}{{ site.imagesurl }}{{ page.thumbsdir }}{% endcapture %}
   {% for imagefile in site.data.gallerydb %}
-    {% capture imagepathfull %}{{ imagepath }}{{ imagefile.filename }}{% endcapture %}
-    {% assign file = site.static_files | where: "path", imagepathfull | first %}
+    {% capture filepath %}{{ site.imagepath.fullres }}{{ imagefile.filename }}{% endcapture %}
+    {% assign file = site.static_files | where: "path", filepath | first %}
     {% if file %}
       <div class="image-box">
         {% for post in site.posts %}
           {% assign posttitle = post.url | split: "/" | last %}
           {% assign postexcerpt = "" %}
-          {% assign imagesurl = imagepathfull | relative_url %}
+          {% assign imagesurl = filepath | relative_url %}
           {% if imagefile.post == posttitle %}
             {% if post.excerpt %}
               {% assign postexcerpt = post.excerpt | strip_html | truncatewords:12 , "... Read more" %}
@@ -27,7 +23,8 @@ permalink: /gallery/
           {% endif %}
         {% endfor %}
         <a href="{{ imagesurl }}" title="{{ imagefile.title }}" class="img-gallery">
-          <img src="{{ thumbpath }}{{ file.basename }}.avif" alt="{{ imagefile.title }}" />
+          <img class="lazyload" data-src="{{ site.imagepath.fullres }}{{ file.basename }}.jpg"
+            src="{{ site.imagepath.thumbs }}{{ file.basename }}.avif" alt="{{ imagefile.title }}" style="width:100%"/>
         </a>
         <div class="card-info">
           <h3>{{ imagefile.title }}</h3>

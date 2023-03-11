@@ -25,7 +25,7 @@ email: abhijeetviswam@gmail.com
 # description: >- # this means to ignore newlines until "baseurl:"
 #    Expect anything tech
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://abhijeetviswam.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://abhijeetviswam.com" # the base hostname & protocol for your site, e.g. http://example.com
 author:
   name: Abhijeet Viswam
   twitter: abhijeetviswam
@@ -34,7 +34,10 @@ twitter_username: abhijeetviswam
 github_username:  abhijeetviswam
 linkedin_username: abhijeetviswam
 logo: "/assets/images/logo.png"
-imagesurl: "/assets/images/"
+imagepath:
+  fullres: /assets/images/fullres/
+  thumbs: /assets/images/thumbs/
+  posts: /assets/images/posts/
 permalink: /:categories/:title/
 
 # google_analytics: UA-198299966-1
@@ -99,6 +102,9 @@ exclude:
   - vendor/ruby/
   - /docs # ignore Basically Basic sample site
   - /example # ignore Basically Basic dev site
+  - Dockerfile
+  - jekyll_server.sh
+  - convertthumb.sh
 
 # Front Matter Defaults
 defaults:

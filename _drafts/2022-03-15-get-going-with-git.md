@@ -2,7 +2,7 @@
 layout: post
 title: "Get Going with GIT"
 <!-- excerpt:  -->
-imagepath: /assets/images/blog/git
+imagepath: /assets/images/posts/git
 categories: [articles]
 date:   2022-03-15 09:00:00 +0530
 ---
