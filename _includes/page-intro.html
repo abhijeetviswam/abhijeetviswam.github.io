@@ -1,12 +1,30 @@
 <header class="intro">
   {% if page.image %}
     {% assign intro_image = page.image.path | default: page.image %}
-    {% unless intro_image contains '://' %}
+    {% if intro_image contains '/' %}
+      {% unless intro_image contains '://' %}
+        {% assign intro_image = intro_image | relative_url %}
+      {% endunless %}
+      {% capture source %}src="{{ intro_image }}"{% endcapture %}
+    {% else %}
+      {% assign f = intro_image | split: '.' %}
+      <!-- {% capture intro_image %}{{ site.imagepath.fullres }}{{ intro_image }}{% endcapture %} -->
       {% assign intro_image = intro_image | relative_url %}
-    {% endunless %}
+      {% capture source %}
+        class="lazyload blur-up"
+        data-sizes="auto"
+        src="{{ site.imagepath.thumbs }}{{ f[0] }}-lq.{{ f[1] }}"
+        data-srcset="{{ site.imagepath.thumbs }}{{ f[0] }}-lq.{{ f[1] }} 20w,
+                     {{ site.imagepath.thumbs }}{{ f[0] }}-320.{{ f[1] }} 320w,
+                     {{ site.imagepath.thumbs }}{{ f[0] }}-768.{{ f[1] }} 768w,
+                     {{ site.imagepath.thumbs }}{{ f[0] }}-1024.{{ f[1] }} 1024w,
+                     {{ site.imagepath.thumbs }}{{ f[0] }}-1920.{{ f[1] }} 1920w,"
+      {% endcapture %}
+    {% endif %}
+
     {% assign intro_image = intro_image | escape %}
-    <div class="intro-image">
-      <img src="{{ intro_image }}" alt="{{ page.title }}">
+    <div class="intro-image" style="max-height:75vh;overflow:hidden" >
+        <img {{ source }} alt="{{ page.title }}" style="display:block;margin-left:auto;margin-right:auto;">
     </div>
   {% endif %}
 
