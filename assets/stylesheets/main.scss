@@ -142,3 +142,12 @@ div.blog-git-img {
     overflow-x: auto;
     overflow-y: hidden;
 }
+
+// Blur images being lazyloaded
+.blur-up {
+  filter: blur(10px);
+  transition: filter 400ms;
+}
+.blur-up.lazyloaded {
+  filter: blur(0);
+}

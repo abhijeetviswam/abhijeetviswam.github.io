@@ -23,8 +23,14 @@ permalink: /gallery/
           {% endif %}
         {% endfor %}
         <a href="{{ imagesurl }}" title="{{ imagefile.title }}" class="img-gallery">
-          <img class="lazyload" data-src="{{ site.imagepath.fullres }}{{ file.basename }}.jpg"
-            src="{{ site.imagepath.thumbs }}{{ file.basename }}.avif" alt="{{ imagefile.title }}" style="width:100%"/>
+          <img class="lazyload blur-up"
+               data-sizes="auto"
+               src="{{ site.imagepath.thumbs }}{{ file.basename }}-lq{{ file.extname }}" alt="{{ imagefile.title }}" style="width:100%"
+               data-src="{{ site.imagepath.thumbs }}{{ file.basename }}-768{{ file.extname }}"
+               data-srcset="{{ site.imagepath.thumbs }}{{ file.basename }}-320{{ file.extname }} 320w,
+                            {{ site.imagepath.thumbs }}{{ file.basename }}-768{{ file.extname }} 768w,
+                            {{ site.imagepath.thumbs }}{{ file.basename }}-1024{{ file.extname }} 1024w,
+                            {{ site.imagepath.thumbs }}{{ file.basename }}-1920{{ file.extname }} 1920w"/>
         </a>
         <div class="card-info">
           <h3>{{ imagefile.title }}</h3>
