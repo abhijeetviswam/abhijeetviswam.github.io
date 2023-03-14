@@ -11,11 +11,28 @@
     </h3>
     {% if post.image.thumbnail %}
       {% assign entry_image = post.image.thumbnail %}
-      {% unless entry_image contains '://' %}
+      {% if entry_image contains '/' %}
+        {% unless entry_image contains '://' %}
+          {% assign entry_image = entry_image | relative_url %}
+        {% endunless %}
+        {% capture source %} class="entry-image u-photo" src="{{ entry_image }}"{% endcapture %}
+      {% else %}
+        {% assign f = entry_image | split: '.' %}
         {% assign entry_image = entry_image | relative_url %}
-      {% endunless %}
+        {% capture source %}
+          class="entry-image u-photo lazyload blur-up"
+          data-sizes="auto"
+          src="{{ site.imagepath.thumbs }}{{ f[0] }}-lq.{{ f[1] }}"
+          data-srcset="{{ site.imagepath.thumbs }}{{ f[0] }}-lq.{{ f[1] }} 20w,
+                       {{ site.imagepath.thumbs }}{{ f[0] }}-320.{{ f[1] }} 320w,
+                       {{ site.imagepath.thumbs }}{{ f[0] }}-768.{{ f[1] }} 768w,
+                       {{ site.imagepath.thumbs }}{{ f[0] }}-1024.{{ f[1] }} 1024w,
+                       {{ site.imagepath.thumbs }}{{ f[0] }}-1920.{{ f[1] }} 1920w,"
+        {% endcapture %}
+      {% endif %}
+
       {% assign entry_image = entry_image | escape %}
-      <img class="entry-image u-photo" src="{{ entry_image }}" alt="">
+      <img {{ source }} alt="">
     {% endif %}
   </header>
   <footer class="entry-meta">

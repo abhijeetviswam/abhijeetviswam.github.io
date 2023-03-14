@@ -1,6 +1,6 @@
 <header class="intro">
-  {% if page.image %}
-    {% assign intro_image = page.image.path | default: page.image %}
+  {% if page.image.path %}
+    {% assign intro_image = page.image.path %}
     {% if intro_image contains '/' %}
       {% unless intro_image contains '://' %}
         {% assign intro_image = intro_image | relative_url %}
@@ -8,7 +8,6 @@
       {% capture source %}src="{{ intro_image }}"{% endcapture %}
     {% else %}
       {% assign f = intro_image | split: '.' %}
-      <!-- {% capture intro_image %}{{ site.imagepath.fullres }}{{ intro_image }}{% endcapture %} -->
       {% assign intro_image = intro_image | relative_url %}
       {% capture source %}
         class="lazyload blur-up"
@@ -23,7 +22,7 @@
     {% endif %}
 
     {% assign intro_image = intro_image | escape %}
-    <div class="intro-image" style="max-height:75vh;overflow:hidden" >
+    <div class="intro-image" style="max-height:60vh; overflow:hidden; display:flex; align-items:center;" >
         <img {{ source }} alt="{{ page.title }}" style="display:block;margin-left:auto;margin-right:auto;">
     </div>
   {% endif %}
