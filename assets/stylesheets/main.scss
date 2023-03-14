@@ -70,6 +70,9 @@
     transition: transform .4s cubic-bezier(.165,.85,.45,1),opacity .4s cubic-bezier(.165,.85,.45,1);
     transform: translate3d(0,10%,0);
 }
+.card-info h3 {
+    color: $accent-color;
+}
 .image-box:hover .card-info {
     opacity: 1;
     transform: translateZ(0);
@@ -93,7 +96,8 @@
 }
 .img-gallery::before,
 .img-gallery::after {
-    background: linear-gradient(360deg,#1495a7,rgba(0,54,135,.2) 90%);
+    // background: linear-gradient(360deg,$accent-color,rgba(0,54,135,.2) 90%);
+    background: linear-gradient(180deg, $base-color 0%, $background-color 55%);
     position: absolute;
     top: 0;
     bottom: 0;
@@ -106,7 +110,7 @@
 }
 .img-gallery:hover::before,
 .img-gallery:hover::after {
-    opacity: 0.8;
+    opacity: 0.9;
     visibility: visible;
 }
 
