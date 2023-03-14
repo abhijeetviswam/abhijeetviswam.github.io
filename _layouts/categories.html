@@ -37,8 +37,17 @@ layout: page
       <section id="{{ category[0] | slugify | downcase }}" class="taxonomy-section">
         <h2 class="taxonomy-title">{{ category[0] }}</h2>
         <div class="entries-{{ page.entries_layout | default: 'list' }}">
+          {% assign post_count = 0 %}
           {% for post in category.last %}
             {% include entry.html %}
+            {% assign post_count = post_count | plus: 1 %}
+            {% if post_count == 2 %}
+              {% break %}
+            {% endif %}
+            {% comment %}
+                TODO: add button to redirect to corresponding category page having full list of posts
+                Create pages for each category and create button to redirect to that category page
+            {% endcomment %}
           {% endfor %}
         </div>
         <a href="#page-title" class="back-to-top">{{ site.data.text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;</a>
