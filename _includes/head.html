@@ -2,7 +2,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#252a34">
+  <meta name="theme-color" content="currentColor">
 
   {% if site.plugins contains 'jekyll-seo-tag' or site.gems contains 'jekyll-seo-tag' %}
     {% comment %}
@@ -20,6 +20,17 @@
     if ( 'querySelector' in document && 'addEventListener' in window ) {
       document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
     }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/darkreader@4.9.44/darkreader.js"></script>
+  <script>
+      const currentColorScheme = localStorage.getItem('color-scheme');
+      if (currentColorScheme === 'dark'||
+            (currentColorScheme === null && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          DarkReader.setFetchMethod(window.fetch);
+          DarkReader.enable({contrast: 120});
+      } else if (currentColorScheme === 'light') {
+          DarkReader.disable();
+      }
   </script>
 
   <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
