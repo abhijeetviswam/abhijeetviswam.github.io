@@ -10,6 +10,7 @@ layout: default
       <div class="entry-content">
         {{ content }}
       </div>
+      <a href="#page-title" class="back-to-top">{{ site.data.text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;</a>
       {% if site.disqus.shortname %}
         {% include disqus_comments.html %}
       {% endif %}
