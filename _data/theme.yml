@@ -1,6 +1,6 @@
 # Theme Skin
-# default, night, plum, sea, soft, steel
-skin: default
+# default, night, plum, sea, soft, steel, bahamablue
+skin: bahamablue
 
 # Theme Text
 t:

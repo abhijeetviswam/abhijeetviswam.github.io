@@ -37,7 +37,9 @@
 
   @each $icon, $color in $icons {
     &--#{$icon} {
-      fill: $color;
+      // For monochromatic icons. If you need colorful,
+      // switch to fill: $color;
+      fill: $base-color;
     }
   }
 }
