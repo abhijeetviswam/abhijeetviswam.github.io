@@ -10,6 +10,7 @@
       <a href="{{ post.url | relative_url }}" rel="bookmark">{{ title }}</a>
     </h3>
     {% if post.image.thumbnail %}
+      <a href="{{ post.url | relative_url }}" rel="bookmark">
       {% assign entry_image = post.image.thumbnail %}
       {% if entry_image contains '/' %}
         {% unless entry_image contains '://' %}
@@ -32,7 +33,8 @@
       {% endif %}
 
       {% assign entry_image = entry_image | escape %}
-      <img {{ source }} alt="">
+      <img {{ source }} alt="" style="border-radius:1em">
+      </a>
     {% endif %}
   </header>
   <footer class="entry-meta">

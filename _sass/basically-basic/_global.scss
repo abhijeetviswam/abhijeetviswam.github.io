@@ -73,6 +73,10 @@
   margin-bottom: 0.5em;
   color: lighten($text-color, 60%);
   font-family: $base-font-family;
+
+  a {
+    text-decoration: none;
+  }
 }
 
 .taxonomy-count {

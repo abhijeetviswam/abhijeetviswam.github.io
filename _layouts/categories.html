@@ -35,7 +35,9 @@ layout: page
   {% for category in site.categories %}
     {% if category[1].size == i %}
       <section id="{{ category[0] | slugify | downcase }}" class="taxonomy-section">
-        <h2 class="taxonomy-title">{{ category[0] }}</h2>
+        <h2 class="taxonomy-title">
+          <a href="/{{ category[0] | slugify | downcase }}">{{ category[0] }}</a>
+        </h2>
         <div class="entries-{{ page.entries_layout | default: 'list' }}">
           {% assign post_count = 1 %}
           {% assign maxed_out = false %}

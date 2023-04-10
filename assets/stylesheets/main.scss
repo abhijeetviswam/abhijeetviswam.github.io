@@ -81,36 +81,37 @@
 .img-gallery {
     position: relative;
     display: block;
-    border-radius: 10px;
+    border-radius: 0.75rem;
     overflow: hidden;
     width: 100%;
     object-fit: cover;
     z-index: 1;
-	transition: all 0.4s ease-in-out;
+	transition: $global-transition;
 }
 .img-gallery:hover {
    transform: scale(1.05);
    z-index:2;
    // box-shadow: 0px 0px 10px 5px rgba(8, 133, 145, 0.67);
-   transition: all 0.4s ease-in-out;
+   transition: $global-transition;
 }
 .img-gallery::before,
 .img-gallery::after {
     // background: linear-gradient(360deg,$accent-color,rgba(0,54,135,.2) 90%);
-    background: linear-gradient(180deg, $base-color 0%, $background-color 55%);
+    // background: linear-gradient(180deg, $base-color 0%, $background-color 55%);
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,255) 55%);
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     content: '';
-    transition: all 0.4s ease;
+    transition: $global-transition;
     opacity: 0;
     visibility: hidden;
 }
 .img-gallery:hover::before,
 .img-gallery:hover::after {
-    opacity: 0.9;
+    opacity: 0.8;
     visibility: visible;
 }
 
