@@ -104,18 +104,18 @@
     }
 
     &::before {
-      -webkit-transform: rotate(35deg);
-      -ms-transform: rotate(35deg);
-      transform: rotate(35deg);
+      -webkit-transform: rotate(-35deg);
+      -ms-transform: rotate(-35deg);
+      transform: rotate(-35deg);
       -webkit-transform-origin: left top;
       -ms-transform-origin: left top;
       transform-origin: left top;
     }
 
     &::after {
-      -webkit-transform: rotate(-35deg);
-      -ms-transform: rotate(-35deg);
-      transform: rotate(-35deg);
+      -webkit-transform: rotate(35deg);
+      -ms-transform: rotate(35deg);
+      transform: rotate(35deg);
       -webkit-transform-origin: left bottom;
       -ms-transform-origin: left bottom;
       transform-origin: left bottom;

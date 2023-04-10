@@ -5,7 +5,7 @@
 .sidebar {
   position: fixed;
   top: 0;
-  left: 0;
+  right: 0;
   width: 100%;
   max-width: $sidebar-width;
   height: 100%;
@@ -126,7 +126,7 @@
 }
 
 .sidebar-toggle-wrapper {
-  position: absolute;
+  position: fixed;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -135,19 +135,11 @@
   align-items: center;
   top: 0;
   right: 0;
-  margin: 1.8125rem 0;
-  padding-right: 1rem;
-  background-color: $background-color;
+  margin: 1.8125rem 0 1.8125rem 0;
   z-index: 10000;
-
-  @include breakpoint($medium) {
-    right: 2rem;
-    padding-right: 0;
-  }
-
-  @include breakpoint($large) {
-    right: 5vw;
-  }
+  box-shadow: -2px 2px 5px #00000055;
+  background: $accent-color;
+  border-radius: 0.5em 0 0 0.5em;
 
   .toggle-inner {
     display: -ms-flexbox;
@@ -156,6 +148,10 @@
     -ms-flex-align: center;
     -webkit-box-align: center;
     align-items: center;
+  }
+
+  &:hover {
+    background-color: tint($accent-color, 20%);
   }
 }
 

@@ -53,10 +53,10 @@ a img.align-left {
    ========================================================================== */
 
 .is--pushed {
-  transform: translateX(1 * $sidebar-width);
+  transform: translateX(-1 * $sidebar-width);
   transform-origin: right;
 
   @include breakpoint($large) {
-    transform: translateX(1.5 * $sidebar-width);
+    transform: translateX(-1.5 * $sidebar-width);
   }
 }
