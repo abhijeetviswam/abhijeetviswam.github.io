@@ -36,4 +36,4 @@ google_fonts:
 
 navigation_pages:
   - gallery.md
-  - about.md
+  # - about.md  # reintroduce this after adding proper details in about page

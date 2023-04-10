@@ -43,6 +43,22 @@
       <div class="inner">
         {% include navigation.html %}
         {% include contact-list.html %}
+        <ul class="sidebar-author">
+          <li>
+            {% include author %}
+            {% if author_picture %}
+            <img class="author-picture" src="{{ author_picture }}" alt="{{ author_name }}">
+            {% endif %}
+          </li>
+          <li>
+            <h3>abhijeet viswam</h3>
+          </li>
+          <li>
+            <p>Hi I'm Abhijeet. A pretty decent software developer. Kind of an artist. Maybe a photographer. And still having no clue how to juggle all these without burning out every other weekend.</p>
+            <p>I'm based in Chennai, India. I've been working with <a href="https://corporate.comcast.com/" style="text-decoration:none">Comcast</a> as a lead developer focusing on wifi, networking and such for the past couple of years.</p>
+            <p>This is where I brush up my html and css while sharing to the world whatever I feel like sharing. Enjoy!!!</p>
+          </li>
+        </ul>
       </div>
     </div>
 
