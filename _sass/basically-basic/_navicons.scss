@@ -5,8 +5,9 @@
 .navicon-button {
   display: inline-block;
   position: relative;
-  padding: 0.90625rem 0;
+  padding: 0.90625rem 5vw 0.90625rem 0.90625rem;
   min-height: $site-image-height;
+  min-width: 6rem; //to accomodate darkmode toggle switch
   -webkit-transition: $navicon-duration / 2;
   transition: $navicon-duration / 2;
   border: 0;

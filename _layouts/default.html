@@ -22,12 +22,6 @@
         </button>
       {% endif %}
 
-      <button class="darkmode-toggle" type="button" aria-label="Dark Mode Switch">
-        <div class="darkmode-icon">
-            <?xml version="1.0" ?><svg fill="none" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg"><path d="M12 3V4M12 20V21M21 12H20M4 12H3M18.364 18.364L17.6569 17.6569M6.34315 6.34315L5.63604 5.63604M18.364 5.63609L17.6569 6.3432M6.3432 17.6569L5.63609 18.364M16 12C16 14.2091 14.2091 16 12 16C9.79086 16 8 14.2091 8 12C8 9.79086 9.79086 8 12 8C14.2091 8 16 9.79086 16 12Z" stroke="#4A5568" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
-        </div>
-      </button>
-
       <button class="toggle navicon-button larr" type="button">
         <span class="toggle-inner">
           <span class="sidebar-toggle-label visually-hidden">{{ site.data.theme.t.menu | default: 'Menu' }}</span>
@@ -35,6 +29,15 @@
         </span>
       </button>
     </div>
+
+      <div class="darkmode-toggle">
+        <button id="toggle-light" class="darkmode-icon" type="button" aria-label="Dark Mode Switch">
+          <?xml version="1.0" ?><svg fill="none" height="2rem" viewBox="0 0 24 24" width="2rem" xmlns="http://www.w3.org/2000/svg"><path d="M12 3V4M12 20V21M21 12H20M4 12H3M18.364 18.364L17.6569 17.6569M6.34315 6.34315L5.63604 5.63604M18.364 5.63609L17.6569 6.3432M6.3432 17.6569L5.63609 18.364M16 12C16 14.2091 14.2091 16 12 16C9.79086 16 8 14.2091 8 12C8 9.79086 9.79086 8 12 8C14.2091 8 16 9.79086 16 12Z" stroke="#f2f7fa" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
+        </button>
+        <button id="toggle-dark" class="darkmode-icon" type="button" aria-label="Dark Mode Switch">
+          <svg viewBox="-92 -92 700 700" xmlns="http://www.w3.org/2000/svg"><path d="M421.6 379.9c-.664 0-1.35.063-2.049.195a177.696 177.696 0 0 1-33.32 3.17c-94.81 0-174.1-77.14-174.1-175.5 0-63.19 33.79-121.3 88.73-152.6 8.467-4.812 6.339-17.66-3.279-19.44-11.2-2.078-29.53-3.746-40.9-3.746C132.3 31.1 32 132.2 32 256c0 123.6 100.1 224 223.8 224 69.04 0 132.1-31.45 173.8-82.93 5.7-7.97-.5-17.17-8-17.17zM255.8 432C158.9 432 80 353 80 256c0-76.32 48.77-141.4 116.7-165.8-21.5 34.8-33.5 75.4-33.5 117.6 0 99.44 65.13 183.9 154.9 212.8-19.6 7.5-40.7 11.4-62.3 11.4z" fill="#f2f7fa" class="fill-000000"></path></svg>
+        </button>
+      </div>
 
     <div id="sidebar" class="sidebar">
       <div class="inner">

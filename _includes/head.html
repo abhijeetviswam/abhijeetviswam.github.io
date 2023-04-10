@@ -23,13 +23,17 @@
   </script>
   <script src="https://cdn.jsdelivr.net/npm/darkreader@4.9.44/darkreader.js"></script>
   <script>
-      const currentColorScheme = localStorage.getItem('color-scheme');
-      if (currentColorScheme === 'dark'||
-            (currentColorScheme === null && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-          DarkReader.setFetchMethod(window.fetch);
-          DarkReader.enable({contrast: 120});
-      } else if (currentColorScheme === 'light') {
-          DarkReader.disable();
+      if (typeof DarkReader !== 'undefined') {
+          const currentColorScheme = localStorage.getItem('color-scheme');
+          if (currentColorScheme === 'dark'||
+              (currentColorScheme === null && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+              DarkReader.setFetchMethod(window.fetch);
+              DarkReader.enable({contrast: 120});
+          } else if (currentColorScheme === 'light') {
+              DarkReader.disable();
+          } else {
+              localStorage.setItem('color-scheme', 'light');
+          }
       }
   </script>
 

@@ -3,15 +3,29 @@
    ========================================================================== */
 
 .darkmode-toggle {
-  margin-left: 0.75rem;
-  margin-right: 0.75rem;
+  padding: 0 0.90625rem 0 0;
+  position: fixed;
+  right: 0;
+  margin: 1.8125rem 0;
+  z-index: 101;
+  transition: all 0.4s ease;
+  visibility: hidden;
+  cursor: pointer;
+}
+
+.darkmode-switch-is-visible {
+  transform: translateY(4rem);
+  transform-origin: top;
+  visibility: visible;
+}
+
+.darkmode-icon {
   border: 0;
   padding: 0;
   outline: none;
   background-color: transparent;
   cursor: pointer;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
+  transition: 0.4s ease;
   height: 2rem;
   width: 2rem;
 }
