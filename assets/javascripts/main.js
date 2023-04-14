@@ -74,9 +74,11 @@ myToggle.addEventListener('click', function () {
   toggleClassMenu();
   animateMenuItems();
 }, false);
-myMenu.addEventListener('click', function () {
-  toggleClassMenu();
-  animateMenuItems();
+myWrapper.addEventListener('click', function () {
+  if (myWrapper.classList.contains('is--pushed')) {
+    toggleClassMenu();
+    animateMenuItems();
+  }
 }, false);
 if (mySearchToggle) {
   mySearchToggle.addEventListener('click', function () {

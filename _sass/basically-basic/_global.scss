@@ -118,3 +118,14 @@
     margin-top: 3em;
   }
 }
+
+.alert {
+    background: $sidebar-background-color;
+    padding: 1.5em;
+    border-radius: 3 * $border-radius;
+    color: $background-color;
+    a {
+        color: $base-color;
+        text-decoration: none;
+    }
+}

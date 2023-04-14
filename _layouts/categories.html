@@ -39,15 +39,15 @@ layout: page
           <a href="/{{ category[0] | slugify | downcase }}">{{ category[0] }}</a>
         </h2>
         <div class="entries-{{ page.entries_layout | default: 'list' }}">
-          {% assign post_count = 1 %}
+          {% assign post_count = 0 %}
           {% assign maxed_out = false %}
           {% for post in category.last %}
             {% assign post_count = post_count | plus: 1 %}
-            {% include entry.html %}
             {% if post_count > 3 %}
               {% assign maxed_out = true %}
               {% break %}
             {% endif %}
+            {% include entry.html %}
           {% endfor %}
         </div>
         {% if maxed_out == true %}

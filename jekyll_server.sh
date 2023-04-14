@@ -27,15 +27,18 @@ case $1 in
         echo "Starting Jekyll server"
         docker run \
             --volume="$PWD:/srv/jekyll:Z" \
-            -p 127.0.0.1:4000:4000 \
+            -p 4000:4000 \
+            -p 35729:35729 \
             -it jekyll serve --livereload
     ;;
     'serve-drafts')
         echo "Starting Jekyll server with drafts"
+        # 35729 is port for livereload
         docker run \
             --rm --name jekyll-container \
             --volume="$PWD:/srv/jekyll:Z" \
-            -p 127.0.0.1:4000:4000 \
+            -p 4000:4000 \
+            -p 35729:35729 \
             -it jekyll serve --drafts --livereload
     ;;
 esac

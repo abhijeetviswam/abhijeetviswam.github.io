@@ -5,52 +5,51 @@
 {% endif %}
 
 <article class="entry">
-  <header class="entry-header">
-    <h3 class="entry-title">
-      <a href="{{ post.url | relative_url }}" rel="bookmark">{{ title }}</a>
-    </h3>
-    {% if post.image.thumbnail %}
-      <a href="{{ post.url | relative_url }}" rel="bookmark">
-      {% assign entry_image = post.image.thumbnail %}
-      {% if entry_image contains '/' %}
-        {% unless entry_image contains '://' %}
+  <a href="{{ post.url | relative_url }}" rel="bookmark">
+    <header class="entry-header">
+      <h3 class="entry-title">
+        {{ title }}
+      </h3>
+      {% if post.image.thumbnail %}
+        {% assign entry_image = post.image.thumbnail %}
+        {% if entry_image contains '/' %}
+          {% unless entry_image contains '://' %}
+            {% assign entry_image = entry_image | relative_url %}
+          {% endunless %}
+          {% capture source %} class="entry-image u-photo" src="{{ entry_image }}"{% endcapture %}
+        {% else %}
+          {% assign f = entry_image | split: '.' %}
           {% assign entry_image = entry_image | relative_url %}
-        {% endunless %}
-        {% capture source %} class="entry-image u-photo" src="{{ entry_image }}"{% endcapture %}
-      {% else %}
-        {% assign f = entry_image | split: '.' %}
-        {% assign entry_image = entry_image | relative_url %}
-        {% capture source %}
-          class="entry-image u-photo lazyload blur-up"
-          data-sizes="auto"
-          src="{{ site.imagepath.thumbs }}{{ f[0] }}-lq.{{ f[1] }}"
-          data-srcset="{{ site.imagepath.thumbs }}{{ f[0] }}-lq.{{ f[1] }} 20w,
-                       {{ site.imagepath.thumbs }}{{ f[0] }}-320.{{ f[1] }} 320w,
-                       {{ site.imagepath.thumbs }}{{ f[0] }}-768.{{ f[1] }} 768w,
-                       {{ site.imagepath.thumbs }}{{ f[0] }}-1024.{{ f[1] }} 1024w,
-                       {{ site.imagepath.thumbs }}{{ f[0] }}-1920.{{ f[1] }} 1920w,"
-        {% endcapture %}
-      {% endif %}
+          {% capture source %}
+            class="entry-image u-photo lazyload blur-up"
+            data-sizes="auto"
+            src="{{ site.imagepath.thumbs }}{{ f[0] }}-lq.{{ f[1] }}"
+            data-srcset="{{ site.imagepath.thumbs }}{{ f[0] }}-lq.{{ f[1] }} 20w,
+                         {{ site.imagepath.thumbs }}{{ f[0] }}-320.{{ f[1] }} 320w,
+                         {{ site.imagepath.thumbs }}{{ f[0] }}-768.{{ f[1] }} 768w,
+                         {{ site.imagepath.thumbs }}{{ f[0] }}-1024.{{ f[1] }} 1024w,
+                         {{ site.imagepath.thumbs }}{{ f[0] }}-1920.{{ f[1] }} 1920w,"
+          {% endcapture %}
+        {% endif %}
 
-      {% assign entry_image = entry_image | escape %}
-      <img {{ source }} alt="" style="border-radius:1em">
-      </a>
-    {% endif %}
-  </header>
-  <footer class="entry-meta">
-    <ul>
-    {% if post.date %}
-      <li><span class="icon">{% include icon-calendar.svg %}</span><time class="entry-time" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time></li>
-    {% endif %}
-    {% if post.read_time %}
-      <li><span class="icon">{% include icon-stopwatch.svg %}</span>{% capture read_time %}{% include read-time.html %}{% endcapture %}{{ read_time | strip }}</li>
-    {% endif %}
-    </ul>
-  </footer>
-  <div class="entry-excerpt">
-    {% if post.excerpt %}
-      {{ post.excerpt | markdownify | truncatewords: 25 }}
-      <p><a href="{{ post.url | relative_url }}" class="more-link">{{ site.data.theme.t.read_more | default: 'Read More' }} <span class="icon icon--arrow-right">{% include icon-arrow-right.svg %}</span></a></p>
-    {% endif %}
-  </div>
+        {% assign entry_image = entry_image | escape %}
+        <img {{ source }} alt="" style="border-radius:1em">
+      {% endif %}
+    </header>
+    <footer class="entry-meta">
+      <ul>
+      {% if post.date %}
+        <li><span class="icon">{% include icon-calendar.svg %}</span><time class="entry-time" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time></li>
+      {% endif %}
+      {% if post.read_time %}
+        <li><span class="icon">{% include icon-stopwatch.svg %}</span>{% capture read_time %}{% include read-time.html %}{% endcapture %}{{ read_time | strip }}</li>
+      {% endif %}
+      </ul>
+    </footer>
+    <div class="entry-excerpt">
+      {% if post.excerpt %}
+        {{ post.excerpt | markdownify | truncatewords: 25 }}
+      {% endif %}
+    </div>
+  </a>
 </article>

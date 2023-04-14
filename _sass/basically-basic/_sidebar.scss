@@ -77,10 +77,16 @@
     overflow-x: hidden;
     -webkit-box-shadow: inset -1em 0 5em 0 rgba(0, 0, 0, 0.125);
     box-shadow: inset -1em 0 5em 0 rgba(0, 0, 0, 0.125);
+    scrollbar-width: none;  /* Hide scrollbar Firefox */
 
     @include breakpoint($medium) {
       padding: 3rem 3rem 1rem;
     }
+  }
+
+  // Hide scrollbar for sidebar in chromium browsers
+  > .inner::-webkit-scrollbar {
+    display: none;
   }
 
   .menu {
